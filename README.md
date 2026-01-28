@@ -60,17 +60,66 @@ elo-sample-project/
    pip install -r requirements.txt
    ```
 
+### Quick Start (Command Line)
+
+Run the complete example in seconds:
+
+```bash
+python quick_start.py
+```
+
+This script:
+- Generates 50 sample basketball games with 6 teams
+- Initializes an ELO model and processes all games
+- Displays team statistics and current rankings
+- Trains an ELO predictor model
+- Fits an ensemble combining ELO, point differential, and win-loss models
+- Shows example predictions and accuracy metrics
+
+**Sample Output:**
+```
+Team Statistics:
+              Team  Games  Wins  Win Rate  Avg Points  Point Diff
+         Arizona      10    7     0.700       73.5        8.2
+         Kansas      11    9     0.818       76.2       12.1
+    ...
+
+ELO Model Rankings (Top 5):
+     Team  Rating
+    Kansas    1621
+  Arizona    1584
+  ...
+
+Ensemble Prediction Example:
+Arizona vs Kansas
+  Arizona: 24.1%
+  Kansas: 75.9%
+```
+
 ### Running the Example Notebook
 
 1. **Launch Jupyter**
    ```bash
-   jupyter notebook
+   jupyter notebook notebooks/elo_basketball_analysis.ipynb
    ```
 
-2. **Open and run `notebooks/elo_basketball_analysis.ipynb`**
+   Or start the Jupyter server in the background:
+   ```bash
+   jupyter notebook
+   ```
+   Then navigate to `http://localhost:8888` and open the notebook
+
+2. **Run the notebook cells sequentially**
    - The notebook walks through the complete workflow
    - Generates sample data and demonstrates all key techniques
    - Produces visualizations and exports results
+   - **Important**: Run all cells from top to bottom in order; do not skip cells
+
+3. **Expected Outputs**
+   - Team statistics with win rates and efficiency metrics
+   - ELO rankings visualization
+   - Rating distribution analysis
+   - CSV exports: `data/final_elo_rankings.csv` and `data/rating_history.csv`
 
 ## Core Components
 
